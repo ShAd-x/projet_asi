@@ -1,0 +1,14 @@
+C:\Users\Alexis\Documents\Cours\C#\Projet\bin\Debug\net8.0\Projet.exe
+C:\Users\Alexis\Documents\Cours\C#\Projet\bin\Debug\net8.0\Projet.deps.json
+C:\Users\Alexis\Documents\Cours\C#\Projet\bin\Debug\net8.0\Projet.runtimeconfig.json
+C:\Users\Alexis\Documents\Cours\C#\Projet\bin\Debug\net8.0\Projet.dll
+C:\Users\Alexis\Documents\Cours\C#\Projet\bin\Debug\net8.0\Projet.pdb
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.AssemblyInfoInputs.cache
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.AssemblyInfo.cs
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.csproj.CoreCompileInputs.cache
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.dll
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\refint\Projet.dll
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.pdb
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\Projet.genruntimeconfig.cache
+C:\Users\Alexis\Documents\Cours\C#\Projet\obj\Debug\net8.0\ref\Projet.dll
