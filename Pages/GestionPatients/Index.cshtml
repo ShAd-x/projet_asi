@@ -8,7 +8,7 @@
 <h1>Mes Patients</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Créer un nouveau patient</a>
 </p>
 <table class="table">
     <thead>
@@ -33,6 +33,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Patient[0].CodePostal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].NumSecu)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Patient[0].Civilite)
@@ -65,12 +68,15 @@
                 @Html.DisplayFor(modelItem => item.CodePostal)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.NumSecu)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Civilite)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editer</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.Id">Supprimer</a>
             </td>
         </tr>
 }

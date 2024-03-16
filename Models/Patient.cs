@@ -19,8 +19,13 @@ namespace Projet_ASI.Models
         public string Email { get; set; }
         public string Adresse { get; set; }
         public string Telephone { get; set; }
+
+        [Display(Name = "Code postal")]
         public string CodePostal { get; set; }
         
+        [Display(Name = "Numéro de sécurité sociale")]
+        public string NumSecu { get; set; }
+
         [Display(Name = "Civilite")]
         public Civility Civilite { get; set; }
 

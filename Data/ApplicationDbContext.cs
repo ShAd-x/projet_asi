@@ -11,5 +11,6 @@ namespace Projet_ASI.Data
             : base(options)
         {
         }
+        public DbSet<Medecin> Medecin { get; set; } = default!;
     }
 }
