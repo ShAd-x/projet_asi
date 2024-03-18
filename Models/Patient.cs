@@ -43,5 +43,8 @@ namespace Projet_ASI.Models
             Madame = 1,
             Autre = 2
         }
+
+        public int? MedecinId { get; set; }
+        public Medecin? Medecin { get; set; }
     }
 }

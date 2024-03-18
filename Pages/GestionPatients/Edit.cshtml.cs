@@ -36,6 +36,7 @@ namespace Projet_ASI.Pages.GestionPatients
                 return NotFound();
             }
             Patient = patient;
+            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Nom");
             return Page();
         }
 

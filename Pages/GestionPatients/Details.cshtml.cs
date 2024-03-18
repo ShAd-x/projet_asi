@@ -35,6 +35,7 @@ namespace Projet_ASI.Pages.GestionPatients
             }
             else
             {
+                patient.Medecin = await _context.Medecin.FirstOrDefaultAsync(m => m.Id == patient.MedecinId);
                 Patient = patient;
             }
             return Page();

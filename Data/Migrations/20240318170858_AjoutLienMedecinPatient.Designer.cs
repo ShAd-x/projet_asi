@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projet_ASI.Data;
 
@@ -11,9 +12,11 @@ using Projet_ASI.Data;
 namespace Projet_ASI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240318170858_AjoutLienMedecinPatient")]
+    partial class AjoutLienMedecinPatient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -290,7 +293,7 @@ namespace Projet_ASI.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MedecinId")
+                    b.Property<int>("MedecinId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Naissance")
@@ -374,7 +377,9 @@ namespace Projet_ASI.Data.Migrations
                 {
                     b.HasOne("Projet_ASI.Models.Medecin", "Medecin")
                         .WithMany()
-                        .HasForeignKey("MedecinId");
+                        .HasForeignKey("MedecinId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Medecin");
                 });
