@@ -17,6 +17,7 @@ namespace Projet_ASI.Models
         public DateTime Naissance { get; set; }
 
         [Required(ErrorMessage = "Le téléphone est obligatoire")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Le numéro de téléphone doit contenir 10 chiffres")]
         public string Telephone { get; set; }
 
         [Required(ErrorMessage = "L'adresse est obligatoire")]
@@ -27,6 +28,8 @@ namespace Projet_ASI.Models
         public string CodePostal { get; set; }
 
         [Display(Name = "Code RPPS")]
+        [Required(ErrorMessage = "Le code RPPS est obligatoire")]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "Le code RPPS doit contenir 11 chiffres")]
         public string RPPS { get; set; }
 
         [Display(Name = "Civilite")]

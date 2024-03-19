@@ -24,6 +24,7 @@ namespace Projet_ASI.Models
         public string Adresse { get; set; }
 
         [Required(ErrorMessage = "Le téléphone est obligatoire")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Le numéro de téléphone doit contenir 10 chiffres")]
         public string Telephone { get; set; }
 
         [Display(Name = "Code postal")]
@@ -44,9 +45,9 @@ namespace Projet_ASI.Models
             Autre = 2
         }
 
+        [Display(Name = "Medecin")]
         public int? MedecinId { get; set; }
         public Medecin? Medecin { get; set; }
-		public ICollection<Bilan>? Bilan { get; set; }
-	}
+        public ICollection<Bilan>? Bilan { get; set; }
+    }
 }
-
