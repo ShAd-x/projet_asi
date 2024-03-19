@@ -23,7 +23,7 @@ namespace Projet_ASI.Pages.GestionPatients
 
         public async Task OnGetAsync()
         {
-            Patient = await _context.Patient.ToListAsync();
+            Patient = await _context.Patient.Include(p => p.Medecin).ToListAsync();
         }
     }
 }

@@ -5,11 +5,10 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Création</h1>
+<h1>Ajout d'un nouveau patient</h1>
 
-<h4>Patient</h4>
-<hr />
-<div class="row">
+<hr/>
+<div class="row" style="justify-content: center;">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -65,14 +64,17 @@
                 <span asp-validation-for="Patient.Civilite" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Patient.MedecinId" class="control-label"></label>
+                <select asp-for="Patient.MedecinId" class="form-control" asp-items="ViewBag.MedecinId"></select>
+            </div>
+            <div class="form-group" style="padding: 1rem;display: flex; justify-content: space-evenly;">
+                <button type="button" class="btn btn-primary" style="background-color: #929292;" onclick="location.href='@Url.Page("Index")'">
+                    Retour
+                </button>
+                <input type="submit" value="Ajouter" class="btn btn-primary" style="background-color: #7AC279;" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Retour à la liste</a>
 </div>
 
 @section Scripts {

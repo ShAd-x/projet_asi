@@ -21,6 +21,7 @@ namespace Projet_ASI.Pages.GestionPatients
 
         public IActionResult OnGet()
         {
+            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Nom");
             return Page();
         }
 

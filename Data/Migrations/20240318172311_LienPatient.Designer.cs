@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projet_ASI.Data;
 
@@ -11,9 +12,11 @@ using Projet_ASI.Data;
 namespace Projet_ASI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240318172311_LienPatient")]
+    partial class LienPatient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -224,38 +227,6 @@ namespace Projet_ASI.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Projet_ASI.Modelss.Bilan", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DateConsultation")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("HeureConsultation")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("MotifConsultation")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NoteSupplementaire")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("Bilan");
-                });
-
             modelBuilder.Entity("Projet_ASI.Models.Medecin", b =>
                 {
                     b.Property<int>("Id")
@@ -400,22 +371,6 @@ namespace Projet_ASI.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Projet_ASI.Models.Bilan", b =>
-                {
-                    b.HasOne("Projet_ASI.Models.Patient", "Patient")
-                        .WithMany("Bilan")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("Projet_ASI.Models.Patient", b =>
-                {
-                    b.Navigation("Bilan");
                 });
 
             modelBuilder.Entity("Projet_ASI.Models.Patient", b =>

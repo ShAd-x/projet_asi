@@ -5,11 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edition</h1>
-
-<h4>Medecin</h4>
+<h1>Modification des informations du médecin</h1>
 <hr />
-<div class="row">
+<div class="row" style="justify-content: center;">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -59,15 +57,14 @@
                 </select>
                 <span asp-validation-for="Medecin.Civilite" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group" style="padding: 1rem;display: flex; justify-content: space-evenly;">
+                <button type="button" class="btn btn-primary" style="background-color: #929292;" onclick="location.href='@Url.Page("Index")'">
+                    Retour
+                </button>
+                <input type="submit" value="Modifier" class="btn btn-primary" style="background-color: #7AC279;" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Retour à la liste</a>
 </div>
 
 @section Scripts {
