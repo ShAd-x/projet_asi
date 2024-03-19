@@ -72,6 +72,31 @@
             @Html.DisplayFor(model => model.Patient.Medecin.Nom)
         </dd>
     </dl>
+    <h2>Bilans</h2>
+    @if (Model.Patient.Bilan != null && Model.Patient.Bilan.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date du Bilan</th>
+                    <th>Motif du Bilan</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var bilan in Model.Patient.Bilan)
+                {
+                    <tr>
+                        <td>@bilan.DateConsultation</td>
+                        <td>@bilan.MotifConsultation</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Ce patient n'a pas encore de bilans.</p>
+    }
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Patient.Id">Edit</a> |
