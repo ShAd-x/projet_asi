@@ -63,5 +63,7 @@
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Medecin.Id">Editer</a> |
-    <a asp-page="./Index">Retour à la liste</a>
+    <button type="button" class="btn btn-primary" style="background-color: #929292;" onclick="location.href='@Url.Page("Index")'">
+        Retour
+    </button>
 </div>
