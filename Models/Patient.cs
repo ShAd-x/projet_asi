@@ -35,5 +35,7 @@ namespace Projet_ASI.Models
             Madame = 1,
             Autre = 2
         }
-    }
+		public ICollection<Bilan>? Bilan { get; set; }
+	}
 }
+

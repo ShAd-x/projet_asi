@@ -1,0 +1,31 @@
+﻿@page "/bilan/{patientId:int}"
+@model Projet_ASI.Pages.Bilans.CreateModel;
+
+<div class="container mt-3">
+    <div class="text-center mb-4">
+        <h2>Création d'un bilan de consultation pour </h2>
+        <h1>@Model.Patient.Prenom @Model.Patient.Nom</h1>
+        <br />
+    <form method="post">
+        <input type="hidden" asp-for="Bilan.PatientId" />
+        <div class="form-group">
+            <label asp-for="Bilan.DateConsultation" class="control-label">Date de consultation</label>
+            <input asp-for="Bilan.DateConsultation" type="date" class="form-control" />
+            <span asp-validation-for="Bilan.DateConsultation" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Bilan.HeureConsultation" class="control-label">Heure de consultation</label>
+            <input asp-for="Bilan.HeureConsultation" type="time" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Bilan.MotifConsultation" class="control-label">Motif de la consultation</label>
+            <input asp-for="Bilan.MotifConsultation" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Bilan.NoteSupplementaire" class="control-label">Note supplémentaire</label>
+            <textarea asp-for="Bilan.NoteSupplementaire" class="form-control"></textarea>
+        </div>
+            <br />
+        <button type="submit" class="btn btn-success">SAUVEGARDER</button>
+    </form>
+</div>
