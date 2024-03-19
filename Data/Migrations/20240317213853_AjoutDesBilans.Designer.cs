@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projet_ASI.Data;
 
@@ -11,9 +12,11 @@ using Projet_ASI.Data;
 namespace Projet_ASI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240317213853_AjoutDesBilans")]
+    partial class AjoutDesBilans
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -224,7 +227,7 @@ namespace Projet_ASI.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Projet_ASI.Modelss.Bilan", b =>
+            modelBuilder.Entity("Projet_ASI.Models.Bilan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -322,9 +325,6 @@ namespace Projet_ASI.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MedecinId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Naissance")
                         .HasColumnType("datetime2");
 
@@ -345,8 +345,6 @@ namespace Projet_ASI.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MedecinId");
 
                     b.ToTable("Patient");
                 });
@@ -416,15 +414,6 @@ namespace Projet_ASI.Data.Migrations
             modelBuilder.Entity("Projet_ASI.Models.Patient", b =>
                 {
                     b.Navigation("Bilan");
-                });
-
-            modelBuilder.Entity("Projet_ASI.Models.Patient", b =>
-                {
-                    b.HasOne("Projet_ASI.Models.Medecin", "Medecin")
-                        .WithMany()
-                        .HasForeignKey("MedecinId");
-
-                    b.Navigation("Medecin");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model Projet_ASI.Pages.GestionPatients.DetailsModel
 
 @{
@@ -75,5 +75,6 @@
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Patient.Id">Edit</a> |
-    <a asp-page="./Index">Retour à la liste</a>
+    <a asp-page="./Index">Retour à la liste</a> | 
+    <a asp-page="/Bilans/Create" asp-route-patientId="@Model.Patient.Id" class="btn btn-primary">Créer un bilan</a>
 </div>

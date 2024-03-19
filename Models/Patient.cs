@@ -46,5 +46,7 @@ namespace Projet_ASI.Models
 
         public int? MedecinId { get; set; }
         public Medecin? Medecin { get; set; }
-    }
+		public ICollection<Bilan>? Bilan { get; set; }
+	}
 }
+

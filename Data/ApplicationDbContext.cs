@@ -6,8 +6,9 @@ namespace Projet_ASI.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<Patient>? Patient { get; set; } 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public DbSet<Patient>? Patient { get; set; }
+		public DbSet<Bilan>? Bilan { get; set; }
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
