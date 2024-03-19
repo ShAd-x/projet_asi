@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using Projet_ASI.Models;
 
 namespace Projet_ASI.Pages.Medecins
 {
+    [Authorize(Roles = "Administrateur")]
     public class EditModel : PageModel
     {
         private readonly Projet_ASI.Data.ApplicationDbContext _context;
